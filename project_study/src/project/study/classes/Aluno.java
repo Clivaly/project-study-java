@@ -2,6 +2,11 @@ package project.study.classes;
 
 public class Aluno {
 	
-		String nomeAluno;
-		int idadeAluno;
+		/*Atributos*/
+		public String nomeAluno;
+		public int idadeAluno;
+		
+		public Aluno(){ /*Cria dados na memória - Padrão do Java*/
+			
+		}
 }
