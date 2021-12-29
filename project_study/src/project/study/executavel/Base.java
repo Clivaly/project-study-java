@@ -7,10 +7,10 @@ public class Base {
 			
 				/* Aluno() = instância de um objeto no java // aluno = é a variável que faz referência ao Aluno() */
 				Aluno aluno = new Aluno();
-				aluno.nomeAluno = "Mark";
-				aluno.idadeAluno = 22;
+				aluno.setNomeAluno("Fulano");;
+				aluno.setIdadeAluno(19);;
 				
-				System.out.println(aluno.nomeAluno);
-				System.out.println(aluno.idadeAluno);
+				System.out.println(aluno.getNomeAluno());
+				System.out.println(aluno.getIdadeAluno());
 		}
 }
