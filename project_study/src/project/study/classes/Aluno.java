@@ -94,15 +94,25 @@ public class Aluno {
 	}
 
 	public double getMediaNota() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+				somaNotas += disciplina.getNota();
+		}
+		return somaNotas / disciplinas.size();
 	}
 
 	public String getAlunoStatus() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
-			return "Aprovado";
+		if (media >= 50) {			
+			if (media >= 70) {
+					return "Aluno está Aprovado";
+			}else {
+					return "Aluno m recuperação";
+			}
 		} else {
-			return "Reprovado";
+				return "Aluno está Reprovado";
 		}
 	}
 
