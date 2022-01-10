@@ -16,7 +16,7 @@ public class Base {
 				aluno.setNomeAluno(nome);
 				aluno.setIdadeAluno(Integer.valueOf(idade));
 				
-				for (int pos = 1; pos <= 2; pos++) {
+				for (int pos = 1; pos <= 4; pos++) {
 					String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos +" ?");
 					String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos +" ?" );
 					
@@ -30,8 +30,16 @@ public class Base {
 				int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 				
 				if (escolha == 0) {
-					String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1 ou  2? ");
-					aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+					
+					int continuarRemover = 0;
+					int posicao = 1;
+					
+					while(continuarRemover == 0) {
+						String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou  4? ");
+						aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);	
+						posicao++;
+						continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
+					}
 				}
 				
 				System.out.println(aluno.toString());
