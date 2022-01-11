@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import project.constantes.StatusAluno;
+
 public class Aluno {
 
 	/* Atributos */
@@ -107,12 +109,12 @@ public class Aluno {
 		double media = this.getMediaNota();
 		if (media >= 50) {			
 			if (media >= 70) {
-					return "Aluno está Aprovado";
+					return StatusAluno.APROVADO;
 			}else {
-					return "Aluno m recuperação";
+					return StatusAluno.RECUPERACAO;
 			}
 		} else {
-				return "Aluno está Reprovado";
+				return StatusAluno.REPROVADO;
 		}
 	}
 
