@@ -11,14 +11,20 @@ import project.study.classes.Aluno;
 import project.study.classes.Disciplina;
 
 public class Base {
-		public static void main(String[] args) {
+	public static void main(String[] args) {
+			
+			String login = JOptionPane.showInputDialog("Informe  o login: ");
+			String senha = JOptionPane.showInputDialog("Informe  a senha: ");
+			
+			if (login.equalsIgnoreCase("admin") &&
+					senha.equalsIgnoreCase("admin")) {
 			
 				List<Aluno> alunos = new ArrayList<Aluno>();
 				
 				/*É uma lista que dentro dela temos uma chave que identifica uma sequência de valores*/
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 											
-				for(int qtd = 1; qtd <= 5; qtd++) {
+				for(int qtd = 1; qtd <= 2; qtd++) {
 			
 				String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+ qtd +" ?");
 				String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
@@ -73,17 +79,18 @@ public class Base {
 			
 				System.out.println("Lista dos provados");
 				for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
-						System.out.println("Resultado: " + aluno.getAlunoStatus() + "com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " + aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
 				
 				System.out.println("Lista dos reprovados");
 				for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
-						System.out.println("Resultado: " + aluno.getAlunoStatus() + "com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " + aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
 				
 				System.out.println("Lista de alunos em recuperação");
 				for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
-						System.out.println("Resultado: " + aluno.getAlunoStatus() + "com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " +  aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
+     		}
 		}
 }
