@@ -6,21 +6,19 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import project.classes.auxiliares.FuncaoAutenticacao;
 import project.constantes.StatusAluno;
-import project.interfaces.PermitirAcesso;
 import project.study.classes.Aluno;
+import project.study.classes.Diretor;
 import project.study.classes.Disciplina;
-import project.study.classes.Secretario;
 
 public class Base {
 	public static void main(String[] args) {
 
 		String login = JOptionPane.showInputDialog("Informe  o login: ");
-		String password = JOptionPane.showInputDialog("Informe  a senha: ");
-		
-		PermitirAcesso permitirAcesso = new Secretario(login, password);
-						
-		if (permitirAcesso.autenticar()) {
+		String password = JOptionPane.showInputDialog("Informe  a senha: ");		
+				
+		if (new FuncaoAutenticacao(new Diretor(login, password)).autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 

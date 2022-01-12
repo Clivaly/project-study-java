@@ -61,7 +61,7 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	/*Esse é o método do contrato de autenticação */
 	@Override
 	public boolean autenticar() {		
-		return login.equals("admin") && password.equals("admin");
+		return login.equals("secret") && password.equals("secret");
 	}
 	
 	/*Esse é o método do contrato de autenticação exemplo 2*/	
