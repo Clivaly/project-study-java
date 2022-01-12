@@ -79,17 +79,17 @@ public class Base {
 			
 				System.out.println("Lista dos provados");
 				for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
-						System.out.println("Resultado: " + aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " + aluno.getNome() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
 				
 				System.out.println("Lista dos reprovados");
 				for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
-						System.out.println("Resultado: " + aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " + aluno.getNome() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
 				
 				System.out.println("Lista de alunos em recuperação");
 				for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
-						System.out.println("Resultado: " +  aluno.getNomeAluno() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
+						System.out.println("Resultado: " +  aluno.getNome() + " está " + aluno.getAlunoStatus() + " com média de: " + aluno.getMediaNota());				
 				}
      		}
 		}

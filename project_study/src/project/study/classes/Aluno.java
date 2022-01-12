@@ -6,14 +6,9 @@ import java.util.Objects;
 
 import project.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-	/* Atributos */
-	private String nomeAluno;
-	private int idadeAluno;
-	private String dataNascimentoAluno;
-	private String cpfAluno;
-	private String nomeMaeAluno;
+	/* Atributos */	
 	private String dataMatriculaAluno;
 	private String nomeEscola;
 	private String serieMatriculadoAluno;
@@ -31,44 +26,44 @@ public class Aluno {
 	public Aluno() { /* Cria dados na memória - Construtor */
 	}
 
-	public String getNomeAluno() {
-		return nomeAluno;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeAluno(String nomeAluno) {
-		this.nomeAluno = nomeAluno;
+	public void setNome(String nomeAluno) {
+		this.nome = nomeAluno;
 	}
 
-	public int getIdadeAluno() {
-		return idadeAluno;
+	public int getIdade() {
+		return idade;
 	}
 
-	public void setIdadeAluno(int idadeAluno) {
-		this.idadeAluno = idadeAluno;
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
-	public String getDataNascimentoAluno() {
-		return dataNascimentoAluno;
+	public String getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setDataNascimentoAluno(String dataNascimentoAluno) {
-		this.dataNascimentoAluno = dataNascimentoAluno;
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
-	public String getCpfAluno() {
-		return cpfAluno;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setCpfAluno(String cpfAluno) {
-		this.cpfAluno = cpfAluno;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public String getNomeMaeAluno() {
-		return nomeMaeAluno;
+	public String getNomeMae() {
+		return nomeMae;
 	}
 
-	public void setNomeMaeAluno(String nomeMaeAluno) {
-		this.nomeMaeAluno = nomeMaeAluno;
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
 	}
 
 	public String getDataMatriculaAluno() {
@@ -120,15 +115,15 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [nomeAluno=" + nomeAluno + ", idadeAluno=" + idadeAluno + ", dataNascimentoAluno="
-				+ dataNascimentoAluno + ", cpfAluno=" + cpfAluno + ", nomeMaeAluno=" + nomeMaeAluno
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento="
+				+ dataNascimento + ", cpf=" + cpf + ", nomeMae=" + nomeMae
 				+ ", dataMatriculaAluno=" + dataMatriculaAluno + ", nomeEscola=" + nomeEscola
 				+ ", serieMatriculadoAluno=" + serieMatriculadoAluno + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cpfAluno, nomeMaeAluno);
+		return Objects.hash(cpf, nomeMae);
 	}
 
 	@Override
@@ -140,7 +135,7 @@ public class Aluno {
 		if (getClass() != obj.getClass())
 			return false;
 		Aluno other = (Aluno) obj;
-		return Objects.equals(cpfAluno, other.cpfAluno) && Objects.equals(nomeMaeAluno, other.nomeMaeAluno);
+		return Objects.equals(cpf, other.cpf) && Objects.equals(nomeMae, other.nomeMae);
 	}
 
 }
