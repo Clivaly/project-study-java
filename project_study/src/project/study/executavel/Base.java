@@ -8,26 +8,24 @@ import javax.swing.JOptionPane;
 
 import project.constantes.StatusAluno;
 import project.study.classes.Aluno;
-import project.study.classes.Diretor;
 import project.study.classes.Disciplina;
+import project.study.classes.Secretario;
 
 public class Base {
 	public static void main(String[] args) {
 
 		String login = JOptionPane.showInputDialog("Informe  o login: ");
-		String senha = JOptionPane.showInputDialog("Informe  a senha: ");
+		String password = JOptionPane.showInputDialog("Informe  a senha: ");
+		
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setPassword(password);
 
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (secretario.autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
-			Diretor diretor = new Diretor();
-			diretor.setNome("Fulano");
-
-			/*
-			 * É uma lista que dentro dela temos uma chave que identifica uma sequência de
-			 * valores
-			 */
+			/* É uma lista que dentro dela temos uma chave que identifica uma sequência de valores */
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 			for (int qtd = 1; qtd <= 2; qtd++) {
@@ -35,10 +33,7 @@ public class Base {
 				String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ?");
 				String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
 
-				/*
-				 * Aluno() = instância de um objeto no java // aluno = é a variável que faz
-				 * referência ao Aluno()
-				 */
+				/*Aluno() = instância de um objeto no java // aluno = é a variável que faz referência ao Aluno() */
 				Aluno aluno = new Aluno();
 				aluno.setNome(nome);
 				aluno.setIdade(Integer.valueOf(idade));
@@ -103,6 +98,8 @@ public class Base {
 				System.out.println("Resultado: " + aluno.getNome() + " está " + aluno.getAlunoStatus()
 						+ " com média de: " + aluno.getMediaNota());
 			}
+		} else {
+				JOptionPane.showMessageDialog(null, "Acesso não permitido!");
 		}
 	}
 }

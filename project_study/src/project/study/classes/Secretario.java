@@ -1,10 +1,16 @@
 package project.study.classes;
 
-public class Secretario extends Pessoa {
+import project.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
+	
+	/*Login and Password*/
+	private String login;
+	private String password;
 
 	public String getRegistro() {
 		return registro;
@@ -28,6 +34,22 @@ public class Secretario extends Pessoa {
 
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
+	}	
+	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
@@ -41,6 +63,13 @@ public class Secretario extends Pessoa {
 	public double salario() {
 		
 		return 1700.00 * 0.9;
+	}
+
+	/*Esse é o método do contrto de autenticação*/
+	@Override
+	public boolean autenticar() {
+		
+		return login.equals("admin") && password.equals("admin");
 	}
 
 }
