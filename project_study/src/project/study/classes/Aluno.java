@@ -8,7 +8,7 @@ import project.constantes.StatusAluno;
 
 public class Aluno extends Pessoa {
 
-	/* Atributos */	
+	/* Atributos */
 	private String dataMatriculaAluno;
 	private String nomeEscola;
 	private String serieMatriculadoAluno;
@@ -91,33 +91,32 @@ public class Aluno extends Pessoa {
 	}
 
 	public double getMediaNota() {
-		
+
 		double somaNotas = 0.0;
-		
+
 		for (Disciplina disciplina : disciplinas) {
-				somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getNota();
 		}
 		return somaNotas / disciplinas.size();
 	}
 
 	public String getAlunoStatus() {
 		double media = this.getMediaNota();
-		if (media >= 50) {			
+		if (media >= 50) {
 			if (media >= 70) {
-					return StatusAluno.APROVADO;
-			}else {
-					return StatusAluno.RECUPERACAO;
+				return StatusAluno.APROVADO;
+			} else {
+				return StatusAluno.RECUPERACAO;
 			}
 		} else {
-				return StatusAluno.REPROVADO;
+			return StatusAluno.REPROVADO;
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento="
-				+ dataNascimento + ", cpf=" + cpf + ", nomeMae=" + nomeMae
-				+ ", dataMatriculaAluno=" + dataMatriculaAluno + ", nomeEscola=" + nomeEscola
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf
+				+ ", nomeMae=" + nomeMae + ", dataMatriculaAluno=" + dataMatriculaAluno + ", nomeEscola=" + nomeEscola
 				+ ", serieMatriculadoAluno=" + serieMatriculadoAluno + "]";
 	}
 
