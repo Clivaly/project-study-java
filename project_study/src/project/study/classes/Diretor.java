@@ -37,8 +37,7 @@ public class Diretor extends Pessoa {
 	}
 
 	@Override
-	public double salario() {
-		
+	public double salario() {		
 		return 4500.00;
 	}
 
