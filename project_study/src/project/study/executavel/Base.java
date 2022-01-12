@@ -16,12 +16,8 @@ public class Base {
 
 		String login = JOptionPane.showInputDialog("Informe  o login: ");
 		String password = JOptionPane.showInputDialog("Informe  a senha: ");
-		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setPassword(password);
-
-		if (secretario.autenticar()) {
+						
+		if ( new Secretario().autenticar(login, password)) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 

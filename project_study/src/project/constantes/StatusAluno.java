@@ -1,6 +1,6 @@
 package project.constantes;
 
-/*Classe e consantes estáticas*/
+/*Classe e constantes estáticas*/
 public class StatusAluno {
 		
 		public static String APROVADO = "aprovado(a)";
