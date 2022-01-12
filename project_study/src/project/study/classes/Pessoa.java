@@ -1,7 +1,7 @@
 package project.study.classes;
 
 /*Classe pai ou classe master*/
-public class Pessoa {
+public abstract class Pessoa {
 
 	protected String nome;
 	protected int idade;
@@ -9,6 +9,8 @@ public class Pessoa {
 	protected String cpf;
 	protected String rg;
 	protected String nomeMae;
+	
+	public abstract double salario();
 
 	public String getNome() {
 		return nome;

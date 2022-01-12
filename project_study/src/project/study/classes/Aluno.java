@@ -137,4 +137,10 @@ public class Aluno extends Pessoa {
 		return Objects.equals(cpf, other.cpf) && Objects.equals(nomeMae, other.nomeMae);
 	}
 
+	@Override
+	public double salario() {
+		
+		return 600.00;
+	}
+
 }
